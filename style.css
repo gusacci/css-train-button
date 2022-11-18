@@ -1,0 +1,107 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: #f2deba;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  min-height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  width: 280px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 10px 10px;
+
+  transition: all 0.8s ease 0s;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover .btn-waves {
+  top: -50px;
+}
+
+.btn:hover {
+  border-radius: 10px;
+  transition: all 0.8s ease 0.2s;
+  box-shadow: 0 0 40px rgba(58, 136, 145, 0.6);
+}
+
+.btn:hover .btn-text {
+  color: #ffefd6;
+}
+
+.btn-text {
+  color: #0e5e6f;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-waves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 280px;
+  background-color: #3a8891;
+  box-shadow: inset 0 0 50px rgba(2, 61, 74, 0.4);
+
+  transition: all 0.8s ease 0s;
+}
+
+.btn-waves::before,
+.btn-waves::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 250%;
+  height: 250%;
+
+  transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+}
+
+.btn-waves::before {
+  background-color: #f2deba;
+  border-radius: 48%;
+
+  animation: waves 5s infinite linear;
+}
+
+.btn-waves::after {
+  background-color: rgba(242, 222, 186, 0.428);
+  border-radius: 44%;
+  animation: waves 10s infinite linear;
+}
+
+@keyframes waves {
+  0% {
+    transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
+  }
+}
